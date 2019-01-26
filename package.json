@@ -1,0 +1,22 @@
+{
+  "name": "sam_vrombinator",
+  "version": "1.0.0",
+  "description": "Jeu de style \"pendu\" pour Samsam",
+  "main": "mot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raphaël Rey",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
