@@ -1,11 +1,21 @@
+import Lettre from './lettre.js'
+
 class Mot extends React.Component {
-  render() {
-    return (
-        <p>MOT</p>
-    );
+    constructor(props){
+        super(props)
   }
+    componentDidMount() {
+       document.addEventListener('keypress', this.props.handleKeyPress);
+    }
+    render() {
+        return (<div id='mot'>
+            <p>
+             {this.props.mot.map((value, index) => {
+        return <Lettre key={index} carac={ value.carac } hide={value.hide} />
+      })}</p>
+            </div>
+        );
+    }
 }
-ReactDOM.render(
-  <Mot />,
-  document.getElementById('root')
-);
+
+export default Mot

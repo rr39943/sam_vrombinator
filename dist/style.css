@@ -1,0 +1,44 @@
+#root {
+  margin-top: 30px;
+}
+#mot {
+  margin: 10px auto 10px auto;
+  font-size: 45px;
+  text-align: center;
+}
+html body {
+  background-color: #000000;
+}
+h1 {
+  color: white;
+}
+#fin {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  font-weight: bolder;
+  color: #FF69B4;
+  transform: translate(-50%, -50%);
+}
+#dessin {
+  position: relative;
+  min-width: 750px;
+}
+#dessin img {
+  display: inline;
+}
+#dessin .fusee {
+  width: 50px;
+  position: absolute;
+  left: 200px;
+}
+#dessin #fusee-b {
+  top: 120px;
+}
+#dessin #fusee-r {
+  top: 90px;
+}
+#dessin .planete-d {
+  float: right;
+}
