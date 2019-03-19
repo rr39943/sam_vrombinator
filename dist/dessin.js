@@ -19,7 +19,7 @@ class Dessin extends React.Component {
       src: "img/rocket-space-red.png"
     }), React.createElement("img", {
       className: "planete-d planete",
-      src: "img/Blue_Marble_rotating.gif"
+      src: "img/mars_r.gif"
     }));
   }
 

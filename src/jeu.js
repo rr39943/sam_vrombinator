@@ -34,7 +34,7 @@ class Jeu extends React.Component {
     }
     check_score_ordi(){
         this.transform_dessin();
-        if (this.state.score_ordi == 9) {
+        if (this.state.score_ordi == 10) {
             this.setState({message:'PERDU !',
                            color:'rose',
                            mot:this.state.mot.map((value,index) => {return {carac:value.carac, hide:false}}),
@@ -69,10 +69,9 @@ class Jeu extends React.Component {
         }
     }
     transform_dessin(){
-        var largeur = jQuery('#dessin').width() - 400;
+        var largeur = jQuery('#dessin').width() - 340;
         jQuery('#fusee-b').animate({'left': String(largeur/10*this.state.score_ordi + 200)+'px'}, 1000);
         jQuery('#fusee-r').animate({'left': String(largeur/this.state.mot.length*this.state.score_joueur + 200)+'px'}, 1000);
-        console.log(largeur/10*this.score_ordi);
 
     }
     build_mot(mot){
@@ -89,6 +88,7 @@ class Jeu extends React.Component {
     }
     fin_partie(){
         document.removeEventListener('keypress', this.handleKeyPress);
+        jQuery('#fin').css("font-size", "100px")
     }
     shuffle_mots(mots) {
         var array = new Array();
@@ -107,8 +107,6 @@ class Jeu extends React.Component {
                     <div className="container mt-4">
                         <div className="card">
                             <Mot mot={this.state.mot} handleKeyPress={this.handleKeyPress} />
-                            <p>Score joueur: {this.state.score_joueur}</p>
-                            <p>Score ordinateur: {this.state.score_ordi}</p>
                         </div>
                     </div>
                     <Message message={this.state.message} />

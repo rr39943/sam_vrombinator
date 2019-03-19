@@ -41,7 +41,7 @@ class Jeu extends React.Component {
   check_score_ordi() {
     this.transform_dessin();
 
-    if (this.state.score_ordi == 9) {
+    if (this.state.score_ordi == 10) {
       this.setState({
         message: 'PERDU !',
         color: 'rose',
@@ -99,14 +99,13 @@ class Jeu extends React.Component {
   }
 
   transform_dessin() {
-    var largeur = jQuery('#dessin').width() - 400;
+    var largeur = jQuery('#dessin').width() - 340;
     jQuery('#fusee-b').animate({
       'left': String(largeur / 10 * this.state.score_ordi + 200) + 'px'
     }, 1000);
     jQuery('#fusee-r').animate({
       'left': String(largeur / this.state.mot.length * this.state.score_joueur + 200) + 'px'
     }, 1000);
-    console.log(largeur / 10 * this.score_ordi);
   }
 
   build_mot(mot) {
@@ -138,6 +137,7 @@ class Jeu extends React.Component {
 
   fin_partie() {
     document.removeEventListener('keypress', this.handleKeyPress);
+    jQuery('#fin').css("font-size", "100px");
   }
 
   shuffle_mots(mots) {
@@ -162,7 +162,7 @@ class Jeu extends React.Component {
     }, React.createElement(Mot, {
       mot: this.state.mot,
       handleKeyPress: this.handleKeyPress
-    }), React.createElement("p", null, "Score joueur: ", this.state.score_joueur), React.createElement("p", null, "Score ordinateur: ", this.state.score_ordi))), React.createElement(Message, {
+    }))), React.createElement(Message, {
       message: this.state.message
     }), React.createElement(Dessin, null));
   }
